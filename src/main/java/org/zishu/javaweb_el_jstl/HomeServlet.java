@@ -39,7 +39,7 @@ public class HomeServlet extends HttpServlet {
         book.setPages("200"); //设置图书页数
         book.setPicture("图片地址"); //设置图书图片地址
 
-        req.setAttribute("book", book); //将book对象存储到req对象中，以便在home.jsp页面中使用
+        req.getSession().setAttribute("book", book); //将book对象存储到req对象中，以便在home.jsp页面中使用
         req.getRequestDispatcher("home.jsp").forward(req, resp); //转发到home.jsp页面
     }
 }

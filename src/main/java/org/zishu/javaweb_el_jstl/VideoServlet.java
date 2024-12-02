@@ -33,7 +33,7 @@ public class VideoServlet extends HttpServlet {
         video.setAuthor("zishu");
         video.setSrc("视频播放地址");
 
-        req.setAttribute("video", video); //将video对象存储到req对象(作用域)中，以便在video.jsp页面中使用
+        req.getSession().setAttribute("video", video); //将video对象存储到session中，以便在video.jsp页面中使用
         req.getRequestDispatcher("video.jsp").forward(req, resp); //转发到video.jsp页面
     }
 }

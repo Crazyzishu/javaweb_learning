@@ -14,8 +14,9 @@
 <h1>${"2024"}</h1>
 <ul>
     <li><a href="home">主页</a></li>
-    <li><a href="video">视频</a></li>
     <li><a href="about">关于</a></li>
+    <li><a href="video">视频</a></li>
+
 </ul>
 <ul></ul>
 <ul></ul>
