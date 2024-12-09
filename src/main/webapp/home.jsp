@@ -8,11 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>home</title>
+    <title>主页</title>
 </head>
-<body>
-<h1>这个是主页</h1>
+<jsp:include page="topNav.jsp"/> <!-- 引入导航栏jsp文件 -->
+<h1>当前是主页</h1>
 <h1>这是从数据库里获取的数据吗，传递给了前台</h1>
-${book}
+<h2>标题：${article.title}</h2>
+<%--<jsp:include page="bottomNav.jsp"/> <!-- 引入底部导航栏jsp文件 -->--%>
 </body>
 </html>

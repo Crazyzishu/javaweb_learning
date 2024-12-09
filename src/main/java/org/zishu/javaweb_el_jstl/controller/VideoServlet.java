@@ -1,4 +1,4 @@
-package org.zishu.javaweb_el_jstl;
+package org.zishu.javaweb_el_jstl.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

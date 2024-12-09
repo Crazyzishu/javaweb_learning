@@ -1,10 +1,11 @@
-package org.zishu.javaweb_el_jstl;
+package org.zishu.javaweb_el_jstl.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.zishu.javaweb_el_jstl.model.Article;
 import org.zishu.javaweb_el_jstl.model.Book;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ import java.io.IOException;
  * "/home"表示当用户访问服务器的/home路径时，
  * 这个Servlet会被调用。
  */
-@WebServlet("/home")
+@WebServlet("/home") // 声明为一个Servlet，并将其映射到"/home"路径
 public class HomeServlet extends HttpServlet {
     /**
      * 处理GET请求
@@ -32,6 +33,19 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         //查询数据库（首先模拟链接数据库）
+        Article article = new Article();
+        article.setId(1);
+        article.setTitle("article 1");
+        article.setAuthor("author 1");
+        article.setContent("content 1");
+        article.setTime("2024-05-01");
+        //第一种request
+        req.setAttribute("article", article); //将article对象存储到req对象中，以便在home.jsp页面中使用
+        //第二种session
+        //req.getSession().setAttribute("article2", article); //将article对象存储到req对象中，以便在home.jsp页面中使用
+        req.getRequestDispatcher("/home.jsp").forward(req, resp); //转发到home.jsp页面
+
+        //模拟查询图书信息
         Book book=new Book();
         book.setTitle("java");
         book.setAuthor("java1"); //设置图书作者

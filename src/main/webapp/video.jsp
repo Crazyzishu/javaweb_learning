@@ -11,6 +11,7 @@
     <title>video</title>
 </head>
 <body>
+<jsp:include page="topNav.jsp"/>
 <h1>这个是视频页</h1>
 <%--<h2>${video}</h2>--%>
 <h2>视频id：${video.id}</h2>

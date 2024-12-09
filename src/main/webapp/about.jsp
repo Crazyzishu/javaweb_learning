@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: lizis
@@ -11,6 +12,7 @@
     <title>about</title>
 </head>
 <body>
+    <jsp:include page="topNav.jsp"/>
     <h1>这个是关于页面</h1>
     <h2>我希望获取视频里面的内容</h2>
     <h2>获取视频：${video}</h2>
